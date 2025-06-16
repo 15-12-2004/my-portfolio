@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="#about">À propos</a>
+    <a href="#education">Éducation</a>
+    <a href="#skills">Compétences</a>
+    <a href="#projects">Projets</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <h1>Mon portfolio</h1>
+    <img src="image.jpg" alt="Photo de profil" class="profile-photo">
+    <p>Hey! Moi c'est Blessing</p>
+  </header>
+
+  <section id="apropos" class="contenu-centre">
+    <h2>À propos de moi</h2>
+    <p>
+      Je m’appelle <strong>Blessing Ngoy Mwepu</strong>, étudiante en Licence 2 Sciences Informatiques.
+      Je suis passionnée par la technologie et le développement, toujours curieuse d’apprendre.
+      Je suis motivée, rigoureuse, et je cherche à progresser chaque jour pour devenir une développeuse complète,
+      capable d’allier innovation et utilité.
+    </p>
+  </section>
+
+  <section id="education" class="section">
+    <h2 class="section-title">Éducation</h2>
+    <div class="education">
+      <div class="card">
+        <h3>Université Nouveaux Horizons</h3>
+        <p>Licence en Informatique - 2022 à aujourd'hui</p>
+      </div>
+      <div class="card">
+        <h3>Ecole Reverevd Kim</h3>
+        <p>Baccalauréat Scientifique - 2021 à 2022</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <h2 class="section-title">Compétences</h2>
+    <div class="skills">
+      <div class="card">
+        <h3>Développement Web</h3>
+        <p>Maîtrise des langages HTML, CSS et JavaScript pour la création d'interfaces dynamiques et responsives.</p>
+      </div>
+      <div class="card">
+        <h3>Langages de programmation</h3>
+        <p>Notions en Python et en C, avec une compréhension des bases de la programmation et de la logique algorithmique.</p>
+      </div>
+      <div class="card">
+        <h3>Outils</h3>
+        <p>Githup, Android studio, VSCode</p>
+      </div>
+      <div class="card">
+        <h3>Bases de données</h3>
+        <p>Compréhension des requêtes SQL</p>
+      </div>
+      <div class="card">
+        <h3>Curiosité et apprentissage continu</h3>
+        <p>Toujours à l’affût des nouvelles technologies, je me forme régulièrement pour rester à jour dans un domaine en constante évolution.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <h2 class="section-title">Projets</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Usafico (Usafi in Congo)</h3>
+        <p>Usafico est une plateforme conçue pour faciliter et améliorer le ramassage des déchets en ville.
+        Elle centralise les demandes des citoyens et organise les tournées des agents pour rendre le service plus rapide, efficace et économique.</p>
+      </div>
+      <div class="card">
+        <h3>Site Portfolio</h3>
+        <p>Mon propre portfolio codé en HTML ,CSS et JS</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section contact remplacée par formulaire avec JS -->
+  <section id="contact" class="section">
+    <h2 class="section-title">Contact</h2>
+    <form id="contactForm" class="contact-form">
+      <input type="text" id="name" placeholder="Nom" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <textarea id="message" placeholder="Message" rows="4" required></textarea>
+      <button type="submit">Envoyer</button>
+      <p id="formMessage" class="form-message"></p>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>Retrouve-moi sur :</p>
+    <div class="socials-colored">
+      <a href="mailto:blessingmwepu1@gmail.com" target="_blank" title="Email">
+        <img src="https://img.icons8.com/color/48/000000/apple-mail.png" alt="Email">
+      </a>
+      <a href="https://instagram.com/blessing_mwepu" target="_blank" title="Instagram">
+        <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" alt="Instagram">
+      </a>
+      <a href="https://www.snapchat.com/add/blessing228378" target="_blank" title="Snapchat">
+        <img src="https://img.icons8.com/color/48/000000/snapchat-circled-logo.png" alt="Snapchat">
+      </a>
+      <a href="https://wa.me/2433236965" target="_blank" title="WhatsApp">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp">
+      </a>
+      <a href="https://t.me/Blessxyg" target="_blank" title="Telegram">
+        <img src="https://img.icons8.com/color/48/000000/telegram-app--v1.png" alt="Telegram">
+      </a>
+      <a href="https://www.linkedin.com/search/results/all/?keywords=Blessing%20Belanganay" target="_blank" title="LinkedIn">
+        <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn">
+      </a>
+    </div>
+    <p class="footer-text">&copy; 2025 Blessing Mwepu.</p>
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const formMessage = document.getElementById('formMessage');
+
+      if (name === '' || email === '' || message === '') {
+        formMessage.textContent = 'Veuillez remplir tous les champs.';
+        formMessage.style.color = 'red';
+        return;
+      }
+
+      formMessage.textContent = 'Message envoyé!';
+      formMessage.style.color = '#bb86fc';
+
+      document.getElementById('contactForm').reset();
+    });
+  </script>
+</body>
+</html>
